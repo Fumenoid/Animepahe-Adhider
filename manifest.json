@@ -1,0 +1,21 @@
+{
+
+    "manifest_version": 2,
+    "name": "Kissanime Auto Add-hider",
+    "version": "1.0.0",
+  
+    "description": "Browser extension that automatically hides advertisements it for you, Works only on Firefox : )",
+  
+    "icons": {
+      "48": "kis-icon.png"
+    },
+   
+    "content_scripts": [
+      {
+        "run_at": "document_idle",
+        "matches": ["*://*.kissanime.ru/*"],
+        "js": ["addhider.js"]
+      }
+    ]
+  
+  }
