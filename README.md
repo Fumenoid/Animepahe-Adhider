@@ -1,2 +1,2 @@
 # kissanime-auto-addhide
-Browser extension that automatically hides add for you : )
+Mozilla Firefox Browser extension that automatically hides add for you : )
