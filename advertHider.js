@@ -6,7 +6,7 @@ const removeAds = () => {
     var searchelements= window.location.search.substring(n+2)
     console.log(searchelements)
     if(searchelements=="beta"){
-        console.log("If ran !!")
+        console.log("By KissanimeAd-hider: If case under execution, server==Beta!!")
         // create an array (see 'spread operator') from all the Node List on the page from: all iframes where it's not a source of 'about:blank'
         // any element on the page which has an id of 'ads' in it.
         // any anchor which links to a local location and it's not got an id of button
@@ -30,7 +30,7 @@ const removeAds = () => {
         })
 
     } else{
-        console.log("Else ran !!")
+        console.log("By KissanimeAd-hider: Else case under execution, server!=Beta!!")
         const [...advertElements] = document.querySelectorAll('iframe:not([src="about:blank"]), [id*="ads"], a[href="#"]:not([id^="btn"])')
 
         // Get the single Element where the iframe has 'video' in its id.
@@ -65,12 +65,26 @@ const removeAds = () => {
 
 const sidelayads = () => {
   try {
-    console.log("Working on side lay elements")
+    console.log("Working on sidelay elements")
     const [...sidelayelem] = document.querySelectorAll('a[rel="noindex nofollow"]')
     sidelayelem.forEach(elem => {
       elem.remove()
     })
+  }
+  catch (e){
+    console.error('Something broke again:', e)
+  }
+}
 
+const vidlayads = () => {
+  try {
+    console.log("Working on video-overlay adverts")
+    const [...videolayelem] = document.querySelectorAll("div")
+    for(var i=0;i<videolayelem.length;i++){
+      if(videolayelem[i].innerHTML=="Close ads [X]"){
+        videolayelem[i].click()
+      }
+    }
   }
   catch (e){
     console.error('Something broke again:', e)
@@ -81,6 +95,7 @@ const sidelayads = () => {
 setTimeout(removeAds, 500)
 
 window.onload = function () {
-  setTimeout(sidelayads, 500)
+  setTimeout(sidelayads, 1000)
+  setTimeout(vidlayads, 2000)
 }
 
