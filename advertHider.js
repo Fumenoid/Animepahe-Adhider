@@ -63,5 +63,24 @@ const removeAds = () => {
   }
 }
 
+const sidelayads = () => {
+  try {
+    console.log("Working on side lay elements")
+    const [...sidelayelem] = document.querySelectorAll('a[rel="noindex nofollow"]')
+    sidelayelem.forEach(elem => {
+      elem.remove()
+    })
+
+  }
+  catch (e){
+    console.error('Something broke again:', e)
+  }
+}
+
 // Just fire it half a econd after the page is idle
 setTimeout(removeAds, 500)
+
+window.onload = function () {
+  setTimeout(sidelayads, 500)
+}
+
