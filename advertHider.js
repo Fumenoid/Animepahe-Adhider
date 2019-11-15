@@ -1,4 +1,3 @@
-
 const removeAds = () => {
   try {
     videoContainer = document.querySelectorAll("video[id*='video']")
@@ -63,7 +62,7 @@ const removeAds = () => {
 
 const sidelayads = () => {
   try {
-    console.log("By KissanimeAd-hider:Working on sidelay elements")
+    console.log("By KissanimeAd-hider:Working on sidelay elements:if present")
     const [...sidelayelem] = document.querySelectorAll('a[rel="noindex nofollow"]')
     sidelayelem.forEach(elem => {
       elem.parentNode.remove()
@@ -76,7 +75,7 @@ const sidelayads = () => {
 
 const vidlayads = () => {
   try {
-    console.log("By KissanimeAd-hider:Working on video-overlay adverts")
+    console.log("By KissanimeAd-hider:Working on video-overlay adverts:if present")
     const [...videolayelem] = document.querySelectorAll("div")
     for(var i=0;i<videolayelem.length;i++){
       if(videolayelem[i].innerHTML=="Close ads [X]"){
