@@ -28,7 +28,7 @@ const removeAds = () => {
 
     } else{
         console.log("By KissanimeAd-hider:0::Else case under execution, server!=Beta!!")
-        const [...advertElements] = document.querySelectorAll('iframe:not([src="about:blank"]), [id*="ads"], a[href="#"]:not([id^="btn"])')
+        const [...advertElements] = document.querySelectorAll('iframe:not([src="about:blank"]), [id*="ads"]')
 
         // Get the single Element where the iframe has 'video' in its id.
         const videoContainer = document.querySelector("iframe[id*='video']")
@@ -63,7 +63,7 @@ const removeAds = () => {
 const sidelayads = () => {
   try {
     console.log("By KissanimeAd-hider:Working on sidelay elements:if present")
-    const [...sidelayelem] = document.querySelectorAll('a[rel="noindex nofollow"]')
+    const [...sidelayelem] = document.querySelectorAll('a[href*="cpmstar"]')
     sidelayelem.forEach(elem => {
       elem.parentNode.remove()
     })
