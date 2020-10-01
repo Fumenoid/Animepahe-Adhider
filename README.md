@@ -1,8 +1,5 @@
-# kissanime-auto-addhide
-Mozilla Firefox Browser extension that automatically hides advertisements for you :)
+# Animepahe_Adhider
 
-link- https://addons.mozilla.org/en-US/firefox/addon/kissanime-ad-hider/
-
+> This project is slowly getting revamped for Animepahe.
 
 
-Thanks smellycharlie for your major contribution 
